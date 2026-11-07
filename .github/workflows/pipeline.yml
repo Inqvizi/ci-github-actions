@@ -63,7 +63,7 @@ jobs:
       # Archive the lambda.zip file for future use in subsequent jobs
       - name: Archive lambda.zip artifact
         if: success()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: lambda-artifact
           path: ./lambda.zip
@@ -87,7 +87,7 @@ jobs:
       
       # Download the lambda.zip artifact from the 'Build' job
       - name: Retrieve lambda.zip
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: lambda-artifact
       
@@ -123,7 +123,7 @@ jobs:
       
       # Retrieve the lambda.zip artifact for Production deployment
       - name: Retrieve lambda.zip
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: lambda-artifact
   
